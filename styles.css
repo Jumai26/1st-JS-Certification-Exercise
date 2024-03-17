@@ -87,6 +87,8 @@ button:active {
     font-family: Helvetica;
     color: rgb(252, 249, 222);
     font-size: 20px;
+    text-align: center;
+    margin: 10px 0px;
 }
 
 @media screen and (max-width: 500px) {

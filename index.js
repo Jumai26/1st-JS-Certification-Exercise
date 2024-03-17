@@ -3,9 +3,15 @@ const submitButton = document.getElementById("checkin-btn");
 const resultText = document.getElementById("result");
 
 
-function check() {
+function check() { 
     const inputValue = myInput.value; //To get the value of the inputed text
-    const regexm = /[*\s\dW_-]/g; // To get have only alphabets
+
+    if (inputValue === "") {
+        alert("Please input a value");
+        resultText.innerHTML = "";
+    }
+
+    const regexm = /[^a-zA-Z0-9]/g; // To get have only alphabets
     const ans = inputValue.replace(regexm, "").toLowerCase().split(""); //Tp convert to lovercase and array
     const array = ans;
 
@@ -16,7 +22,7 @@ function check() {
             break;
         } 
     }
-
+    
     if (isPalimdrome) {
         resultText.innerHTML = `${myInput.value} is a Palindrome`;
     } else {
